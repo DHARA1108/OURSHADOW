@@ -1,0 +1,106 @@
+# BuyMore — Modern E-Commerce Web Storefront 🛒
+
+A feature-complete, production-grade frontend e-commerce web application built with modern semantic **HTML5, CSS3, and JavaScript (ES6+)**, integrated with the **FakeStore API** and backed by comprehensive `localStorage` persistence.
+
+---
+
+## ✨ Features & Capabilities
+
+### 1. Navigation & Category Filtering
+- **Sidebar & Top Header Navigation**: Seamlessly synchronized navigation between category tabs and sidebar links.
+- **Full Category Support**: Instant filtering across **All Products**, **Men's Clothing**, **Women's Clothing**, **Electronics**, and **Fine Jewelry**.
+- **Special Collections**: One-click filtering for **Popular / Top-Rated Products** and seasonal promos.
+- **Mobile Responsive Drawer**: Off-canvas touch-friendly navigation drawer with animated hamburger toggle.
+
+### 2. Live Search & Multi-Criteria Sorting
+- **Instant Search**: Real-time filtering querying product titles, descriptions, and categories.
+- **Quick Clear**: One-click `X` clear button and keyboard `Escape` shortcut support.
+- **Sort Controls**:
+  - Featured / Default
+  - Price: Low to High
+  - Price: High to Low
+  - Highest Customer Rating
+  - Most Popular (Review volume)
+- **Empty Search Feedback**: Helpful fallback state with a direct "Reset Filters" action.
+
+### 3. Product Display & Rich Details Modal
+- **Enhanced Product Cards**:
+  - Fixed-ratio container with image preservation (`object-fit: contain`)
+  - Full title multi-line display with CSS line clamp (no truncated cuts)
+  - Rating stars, numeric score, and verified review count
+  - Current price with calculated original retail comparison
+  - Discount tags (`-15%`) and Category tags
+  - Interactive Wishlist heart button with scale animations
+  - Direct "Add to Cart" and "Quick View" actions
+- **Product Details Modal**:
+  - High-resolution product showcase
+  - Full title, category badge, and complete description
+  - Star ratings breakdown
+  - Quantity stepper (`-` / `+`)
+  - Direct Add to Cart with selected quantity & Wishlist toggle
+
+### 4. Robust Wishlist System
+- Dedicated **My Wishlist** view section.
+- Stateful heart icons that sync dynamically across product cards, featured widgets, and modal views.
+- **Persistent Storage**: Saved in `localStorage` across page reloads.
+- Quick actions to move wishlisted items into cart or remove them.
+- Clean empty wishlist state with browsing call-to-action.
+
+### 5. Shopping Cart & Free Shipping Calculator
+- **Persistent Cart**: Stored in `localStorage` (`buymore_cart`).
+- Slide-out Cart Drawer with item count badge.
+- Quantity adjustment (`+` / `-`) and one-click removal.
+- **Dynamic Free Shipping Progress Bar**: Unlocks free shipping on orders over \$50.
+- **Promo Code Engine**: Supports codes like `SAVE10` (10% off), `WELCOME15` (15% off), or `BUYMORE` (20% off).
+- Live calculation of Subtotal, Shipping, Taxes (8%), and Grand Total.
+
+### 6. Realistic Multi-Step Checkout
+- **Customer & Delivery Address**: Form fields for Full Name, Email, Phone, Street Address, City, State/Province, and Postal/ZIP code.
+- **Client-side Form Validation**: Validates required fields, formats, and displays clear error feedback.
+- **Payment Method UI**: Selectable cards for Credit/Debit Card (with demo sandbox inputs), PayPal Express, and Cash on Delivery (COD).
+- **Live Order Review**: Mini-item summary and final payment amount.
+- **Order ID Generation**: Generates unique receipt codes (e.g. `BM-748291`).
+
+### 7. Order Confirmation & Order History
+- **Success Screen**: Shows confirmed Order ID, estimated delivery window (3-5 business days), and purchased items receipt.
+- **Dedicated Orders View**: Complete log of placed orders with status badges (`Confirmed`, `Delivered`), order date, and item breakdown.
+- **Sidebar Recent Orders**: Live dynamic widget displaying recently placed orders.
+
+### 8. Customer Profile Management
+- Frontend profile management for personal info and default shipping address.
+- Live stats displaying total placed orders and saved wishlist count.
+- Saved persistently in `localStorage`.
+
+### 9. Resilient API & Offline Catalog Fallback
+- Connects to `https://fakestoreapi.com/products`.
+- Includes automated timeout detection and a 20-item verified catalog fallback so the site remains 100% operational even without an active internet connection or during API rate limits.
+
+---
+
+## 🛠️ Tech Stack & Design Principles
+
+- **HTML5**: Semantic markup (`<main>`, `<aside>`, `<header>`, `<article>`, `<section>`, `<footer>`, `<nav>`).
+- **CSS3**: Modern Flexbox & CSS Grid, CSS custom properties (variables), accessible focus rings, responsive media queries.
+- **JavaScript (ES6+)**: Vanilla JS without bloated external frameworks or libraries.
+- **Storage**: Browser `localStorage` for state preservation.
+- **Icons**: FontAwesome 6.4.0 CDN.
+- **Typography**: Google Fonts Inter.
+
+---
+
+## 🚀 How to Run
+
+1. Simply open `index.html` in any modern web browser (Chrome, Edge, Firefox, Safari):
+   - Double-click `index.html`, OR
+   - Serve using VS Code Live Server / Python:
+     ```bash
+     python -m http.server 8000
+     ```
+2. Explore the store:
+   - Browse and filter by category (Men, Women, Electronics, Jewelry).
+   - Test the live search bar (`"jacket"`, `"ssd"`, `"gold"`).
+   - Click any product to view full specifications in the Product Modal.
+   - Save items to your Wishlist and review them in the Wishlist tab.
+   - Add items to your Cart and test the Free Shipping progress bar.
+   - Try applying promo code `SAVE10`.
+   - Complete checkout to generate a new order and view it in your Order History!
